@@ -47,7 +47,7 @@ void BleAdvController::set_encoding_and_variant(const std::string & encoding, co
   this->encoding_options_ = this->handler_->get_ids(encoding);
 
   // Convert to FixedVector<const char*> for new set_options() API
-  esphome::FixedVector<const char*, 10> options;
+  esphome::FixedVector<const char*> options;
   for (const auto& opt : this->encoding_options_) {
     options.push_back(opt.c_str());
   }
